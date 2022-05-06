@@ -1,0 +1,16 @@
+/*
+main background color grey:     #3D4144
+font color:                     white
+login-board color violet:       #A14BAF
+
+*/
+
+.login {
+    height: 100vh;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background-color: #3D4144;
+    color: white;
+}
