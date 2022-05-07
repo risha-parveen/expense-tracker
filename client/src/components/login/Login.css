@@ -84,4 +84,20 @@ form{
     box-sizing: border-box;
     font-size:x-large;
     margin: 10px;;
+    margin-bottom:10px;
+}
+
+.create-new-account{
+    color:white;
+    background-color:#A14BAF;
+    border:none;
+    box-sizing: border-box;
+    font-size:small;
+    margin-top:5px;
+    transition:0.4s ease;
+}
+
+.create-new-account:hover{
+    color:rgb(245, 179, 234);
+    font-size: 1rem;
 }

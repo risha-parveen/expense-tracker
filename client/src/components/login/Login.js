@@ -25,6 +25,7 @@ const Login = () => {
             autocomplete="off"
           />
           <button className="login-button">Log In</button>
+          <button className="create-new-account">new here? Sign Up</button>
         </form>
       </div>
     </div>
