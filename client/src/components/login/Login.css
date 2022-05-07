@@ -7,10 +7,81 @@ login-board color violet:       #A14BAF
 
 .login {
     height: 100vh;
-    width: 50%;
+    width: 100vw;
     margin: 0;
     padding: 0;
     position: absolute;
-    background-color: #3D4144;
+    background:linear-gradient(to right, #3D4144, #727a80) ;
     color: white;
+    display: flex;
+ }
+    
+.overview {
+    height: 100vh;
+    margin-right: auto;
+    display:flex;
+    margin-left:10%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.overview h1{
+    font-size: 5rem;
+    margin-bottom: 5px;
+}
+    
+.ellipse {
+    height: 100vh;
+    width: 150px;
+    border-radius: 70%;
+    background-color: #A14BAF;
+    float: right;
+    flex-shrink: 0;
+}
+
+.login-board{
+    height:100vh;
+    background-color: #A14BAF;
+    margin-left:-75px;
+    flex-shrink: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    min-width:440px;
+}
+
+.fields{
+    background-color: #A14BAF;
+    border:none;
+    border-bottom:1px solid white;
+    outline:none;
+    font-size: large;
+    margin:20px 50px;
+    color:white;
+}
+
+.fields::placeholder{
+    color:rgba(255, 255, 255, 0.726);
+    font-size: medium;
+}
+
+.fields:focus{
+    box-shadow: 1px white;
+    border-bottom:solid 2px rgba(#000, .2);
+}
+
+.login-button{
+    color:white;
+    background-color:#A14BAF;
+    border:none;
+    box-sizing: border-box;
+    font-size:x-large;
+    margin: 10px;;
 }
