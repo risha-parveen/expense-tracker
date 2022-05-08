@@ -126,3 +126,11 @@ form{
     color:rgb(245, 179, 234);
     font-size: 1rem;
 }
+
+#close{
+    display:none;
+}
+
+#open{
+    display: "";
+}

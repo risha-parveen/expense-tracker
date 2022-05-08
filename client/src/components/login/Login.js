@@ -1,58 +1,14 @@
 import { useState } from "react";
 import "./Login.css";
 
-export const SignUp = () => {
-  return (
-    <form id="signup-form">
-      <input
-        className="username fields"
-        placeholder="username"
-        spellCheck="false"
-        autoComplete="off"
-      />
-      <input
-        className="password fields"
-        type="password"
-        placeholder="password"
-        spellCheck="false"
-        autoComplete="off"
-      />
-      <input
-        className="confirm-password fields"
-        type="password"
-        placeholder="confirm password"
-        spellCheck="false"
-        autoComplete="off"
-      />
-      <button className="signup-button">Sign Up</button>
-      <button className="back-to-login">Back to log in</button>
-    </form>
-  );
-};
-
-export const Login = () => {
-  return (
-    <form className="login-form">
-      <input
-        className="username fields"
-        placeholder="username"
-        spellCheck="false"
-        autoComplete="off"
-      />
-      <input
-        className="password fields"
-        type="password"
-        placeholder="password"
-        spellCheck="false"
-        autoComplete="off"
-      />
-      <button className="login-button">Log In</button>
-      <button className="create-new-account">new here? Sign Up</button>
-    </form>
-  );
-};
 
 const LoginPage = () => {
+  const [form, setform] = useState(true);
+
+  const toggleForm = () => {
+    setform(!form);
+  };
+
   return (
     <div className="login">
       <div className="overview">
@@ -61,7 +17,64 @@ const LoginPage = () => {
       </div>
       <div className="ellipse"></div>
       <div className="login-board">
-        <Login />
+        <form className="login-form" id={form ? "open" : "close"}>
+          <input
+            className="username fields"
+            placeholder="username"
+            spellCheck="false"
+            autoComplete="off"
+          />
+          <input
+            className="password fields"
+            type="password"
+            placeholder="password"
+            spellCheck="false"
+            autoComplete="off"
+          />
+          <button className="login-button">Log In</button>
+          <button
+            className="create-new-account"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleForm();
+            }}
+          >
+            new here? Sign Up
+          </button>
+        </form>
+
+        <form className="signup-form" id={form ? "close" : "open"}>
+          <input
+            className="username fields"
+            placeholder="username"
+            spellCheck="false"
+            autoComplete="off"
+          />
+          <input
+            className="password fields"
+            type="password"
+            placeholder="password"
+            spellCheck="false"
+            autoComplete="off"
+          />
+          <input
+            className="confirm-password fields"
+            type="password"
+            placeholder="confirm password"
+            spellCheck="false"
+            autoComplete="off"
+          />
+          <button
+            className="signup-button"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleForm();
+            }}
+          >
+            Sign Up
+          </button>
+          <button className="back-to-login">Back to log in</button>
+        </form>
       </div>
     </div>
   );
