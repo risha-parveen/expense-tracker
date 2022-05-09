@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 const LoginPage = () => {
   const [form, setform] = useState(true);
@@ -30,7 +31,9 @@ const LoginPage = () => {
             spellCheck="false"
             autoComplete="off"
           />
-          <button className="login-button">Log In</button>
+          <Link to="/home">
+            <button className="login-button">Log In</button>
+          </Link>
           <button
             className="create-new-account"
             onClick={(e) => {

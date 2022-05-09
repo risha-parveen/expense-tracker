@@ -77,13 +77,20 @@ form{
     border-bottom:solid 2px rgba(#000, .2);
 }
 
+a{
+    display:flex;
+    justify-content: center;
+    text-decoration: none;
+    padding-top:10px;
+}
+
 .login-button{
     color:white;
     background-color:#A14BAF;
     border:none;
     box-sizing: border-box;
     font-size:x-large;
-    margin: 10px;;
+    margin: auto;
     margin-bottom:10px;
 }
 
