@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
 
-
 const LoginPage = () => {
   const [form, setform] = useState(true);
 
@@ -73,7 +72,15 @@ const LoginPage = () => {
           >
             Sign Up
           </button>
-          <button className="back-to-login">Back to log in</button>
+          <button
+            className="back-to-login"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleForm();
+            }}
+          >
+            Back to log in
+          </button>
         </form>
       </div>
     </div>
