@@ -1,0 +1,10 @@
+.home-page{
+  height:100vh;
+}
+
+.content-space{
+  display:flex;
+  flex-direction: row;
+  height:100%;
+  max-width: 225px;
+}
