@@ -1,8 +1,13 @@
-
+.navbar{
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+}
 .main-nav{
   height:70px;
   display:flex;
   background-color: #5E5262;
+  flex:0 1 auto;
 }
 
 .left-nav{
@@ -50,4 +55,38 @@ p{
   padding-top:12px;
   margin-right: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main-sidebar{
+  flex:1 1 auto;
+  width: 225px;
+  background-color: #5E5262;
+}
+
+.side-menu-items{
+  width:100%;
+  padding:0;
+  margin: 0;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.sidebar-text{
+  color: white;
+  padding: 10px 20px;
+}
+
+.span-text{
+  padding-left:20px;
+  font-size:1.2rem;
+  ;
 }

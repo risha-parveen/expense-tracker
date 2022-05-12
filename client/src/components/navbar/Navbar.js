@@ -1,11 +1,51 @@
 import React from "react";
 import "./Navbar.css";
-import { FaAlignJustify } from "react-icons/fa";
+import { FaAlignJustify, FaUserAlt } from "react-icons/fa";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { AiFillHome, AiFillSignal } from "react-icons/ai";
+
+const SidebarData = [
+  {
+    title: "Home",
+    path: "/home",
+    icon: <AiFillHome color="white" fontSize="1.5rem" />,
+    cName: "sidebar-text",
+  },
+  {
+    title: "Expense",
+    path: "#",
+    icon: <AiFillSignal color="white" fontSize="1.5rem" />,
+    cName: "sidebar-text",
+  },
+  {
+    title: "Account",
+    path: "/",
+    icon: <FaUserAlt color="white" fontSize="1.5rem" />,
+    cName: "sidebar-text",
+  },
+];
 
 const Sidebar = () => {
-  return <div className="main-sidebar"></div>;
+  return (
+    <div className="main-sidebar">
+      <ul className="side-menu-items">
+        <li>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName}>
+                <Link to={item.path}>
+                  {item.icon}
+                  <span className="span-text">{item.title}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </li>
+      </ul>
+    </div>
+  );
 };
 
 function Navbar() {
