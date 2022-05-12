@@ -27,9 +27,9 @@ const SidebarData = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ activity }) => {
   return (
-    <div className="main-sidebar">
+    <div className="main-sidebar" id={activity}>
       <ul className="side-menu-items">
         <li>
           {SidebarData.map((item, index) => {
@@ -50,6 +50,11 @@ const Sidebar = () => {
 
 function Navbar() {
   const [upDown, setUpdown] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebar(!sidebar);
+  };
 
   const toggleUpDown = () => {
     setUpdown(!upDown);
@@ -59,7 +64,13 @@ function Navbar() {
     <div className="navbar">
       <div className="main-nav">
         <div className="left-nav">
-          <button className="expand-button">
+          <button
+            className="expand-button"
+            onClick={(e) => {
+              e.preventDefault();
+              toggleSidebar();
+            }}
+          >
             <FaAlignJustify color="white" fontSize="1.5rem" />
           </button>
           <p>Expense Tracker</p>
@@ -88,7 +99,7 @@ function Navbar() {
           <p className="account-username">Adithya Raj</p>
         </div>
       </div>
-      <Sidebar />
+      <Sidebar activity={sidebar ? "active" : "inactive"} />
     </div>
   );
 }
