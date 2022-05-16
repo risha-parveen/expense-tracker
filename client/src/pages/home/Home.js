@@ -10,6 +10,8 @@ function Home() {
       <Navbar />
       <div className="content-space">
         <Sidebar />
+        <div className="balance-container"></div>
+        <div className="this-week-container"></div>
       </div>
     </div>
   );

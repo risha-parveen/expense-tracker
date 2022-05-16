@@ -8,3 +8,16 @@
   height:100%;
   max-width: 225px;
 }
+
+.balance-container{
+  background-color: blue;
+  width:200px;
+  height: 100%;
+
+}
+
+.this-week-container{
+  background-color: red;
+  width:auto;
+  height: 100%;
+}
