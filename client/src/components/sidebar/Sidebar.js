@@ -26,26 +26,25 @@ const SidebarData = [
   },
 ];
 
-function Sidebar({ activity }) {
+function Sidebar({}, ref) {
   return (
-    <div className="main-sidebar" id={activity}>
+    <div ref={ref} className="main-sidebar">
       <ul className="side-menu-items">
-        <li>
-          {SidebarData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName}>
-                <Link to={item.path}>
-                  {item.icon}
-                  <span className="span-text">{item.title}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </li>
+        {SidebarData.map((item, index) => {
+          return (
+            <li key={index} className={item.cName}>
+              <Link to={item.path}>
+                {item.icon}
+                <span className="span-text">{item.title}</span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
 }
 
+const forwardSidebar = React.forwardRef(Sidebar);
 
-export default Sidebar;
+export default forwardSidebar;

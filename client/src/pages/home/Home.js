@@ -2,18 +2,14 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./Home.css";
-import { sidebarStack } from "../../components/navbar/Navbar";
-let sidebar = null;
-const bleh = () => {
-  console.log(sidebarStack);
-};
+import { useRef } from "react";
 
 function Home() {
   return (
-    <div className="home-page" onClick={bleh}>
+    <div className="home-page">
       <Navbar />
       <div className="content-space">
-        <Sidebar activity={sidebarStack ? "active" : "inactive"} />
+        <Sidebar />
       </div>
     </div>
   );

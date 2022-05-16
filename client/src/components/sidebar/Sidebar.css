@@ -3,7 +3,7 @@
   width: 225px;
   position: relative;
   transition: 0.6s ease;
-  left:100%;
+  left:-100%;
 }
 
 #active{

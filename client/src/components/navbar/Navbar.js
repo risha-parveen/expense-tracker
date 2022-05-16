@@ -2,26 +2,34 @@ import React from "react";
 import "./Navbar.css";
 import { FaAlignJustify } from "react-icons/fa";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Sidebar from "../sidebar/Sidebar";
 
+let sidebarVal = null;
+
 let sidebar,
-  setSidebar,
-  sidebarStack = [];
+  setSidebar = null;
 
 function Navbar() {
   const [upDown, setUpdown] = useState(false);
   [sidebar, setSidebar] = useState(false);
+  const inputRef = useRef();
 
   const toggleUpDown = () => {
     setUpdown(!upDown);
-    sidebarStack.push(upDown);
   };
 
   const toggleSidebar = () => {
     setSidebar(!sidebar);
-    sidebarStack = sidebar;
   };
+
+  const showSidebar = () => {
+    console.log(Sidebar);
+  };
+
+  useEffect(() => {
+    sidebarVal = sidebar;
+  }, [sidebar]);
 
   return (
     <div className="navbar">
@@ -32,6 +40,7 @@ function Navbar() {
             onClick={(e) => {
               e.preventDefault();
               toggleSidebar();
+              showSidebar();
             }}
           >
             <FaAlignJustify color="white" fontSize="1.5rem" />
@@ -66,6 +75,5 @@ function Navbar() {
   );
 }
 
-export { sidebarStack };
 
 export default Navbar;
