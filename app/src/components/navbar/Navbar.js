@@ -3,11 +3,11 @@ import "./Navbar.css";
 import { FaAlignJustify } from "react-icons/fa";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { useState, useContext } from "react";
-import { HomeContext } from "../../contexts/Context.js";
+import { SidebarContext } from "../../contexts/Context.js";
 
 function Navbar() {
   const [upDown, setUpdown] = useState(false);
-  const { sidebar, setSidebar } = useContext(HomeContext);
+  const { sidebar, setSidebar } = useContext(SidebarContext);
 
   const toggleUpDown = () => {
     setUpdown(!upDown);

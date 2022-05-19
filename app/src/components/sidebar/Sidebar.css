@@ -2,13 +2,13 @@
   background-color: #5E5262;
   width: 225px;
   position: relative;
-  transition: 0.6s ease;
+  transition: 0.3s ease;
   left:-100%;
 }
 
 #active{
   left:0;
-  transition: 0.4s ease;
+  transition: 0.3s ease;
 }
 
 .side-menu-items{

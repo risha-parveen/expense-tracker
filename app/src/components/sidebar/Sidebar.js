@@ -19,7 +19,7 @@ const SidebarData = [
   },
   {
     title: "Account",
-    path: "/",
+    path: "#",
     icon: <FaUserAlt color="white" fontSize="1.5rem" />,
     cName: "sidebar-text",
   },
