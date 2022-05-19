@@ -1,0 +1,42 @@
+#set-plan-container{
+  position: relative;
+  top:170px;
+  width:300px;
+  height:300px;
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.set-plan-button{
+  box-sizing: border-box;
+  height:55px;
+  color:white;
+  margin:10px;
+  border-radius: 10px;
+  border:none;
+  font-size: 1.3rem;
+}
+
+.balance{
+  background-color:rgba(212, 84, 131, 0.68) ;
+   
+}
+
+#weekly-plan-button{
+  background-color: rgba(212, 184, 84, 0.68);
+}
+
+.set-plan-button span{
+  position: relative;
+  bottom:0;
+  top:1px;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+#edit-button{
+  background:transparent;
+  border: none;
+  padding-right:0;
+}
