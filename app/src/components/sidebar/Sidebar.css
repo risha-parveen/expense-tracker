@@ -1,0 +1,53 @@
+.main-sidebar{
+  background-color: #5E5262;
+  width: 225px;
+  position: relative;
+  transition: 0.6s ease;
+  left:-100%;
+}
+
+#active{
+  left:0;
+  transition: 0.4s ease;
+}
+
+.side-menu-items{
+  width:100%;
+  padding:0;
+  margin: 0;
+}
+
+ul{
+  list-style: none;
+}
+
+li a{
+  text-decoration: none;
+  display:inline;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+
+.sidebar-text{
+  color: white;
+  padding: 20px 20px;
+}
+
+.sidebar-text:hover{
+  background-color: #473F49;
+}
+
+.span-text{
+  padding-left:20px;
+  font-size:1.2rem;
+  vertical-align: top;
+  margin-top:5px;
+  position: relative;
+  top:4px;
+  transition: 0.4s ease;
+}
+
+.navbar #inactive .span-text{
+  display:none;
+}
