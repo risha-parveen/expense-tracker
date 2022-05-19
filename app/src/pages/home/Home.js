@@ -12,6 +12,10 @@ function Home() {
       <Navbar />
       <div className="content-space">
         <Sidebar activity={sidebar ? "active" : "inactive"} />
+        <div className="content">
+          <div id="set-plan-container"></div>
+          <div id="this-week-container"></div>
+        </div>
       </div>
     </div>
   );

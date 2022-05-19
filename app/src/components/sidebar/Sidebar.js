@@ -3,24 +3,25 @@ import "./Sidebar.css";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AiFillHome, AiFillSignal } from "react-icons/ai";
+import { BiHomeAlt, BiUser, BiTrendingUp } from "react-icons/bi";
 
 const SidebarData = [
   {
     title: "Home",
     path: "/home",
-    icon: <AiFillHome color="white" fontSize="1.5rem" />,
+    icon: <BiHomeAlt color="white" fontSize="1.5rem" />,
     cName: "sidebar-text",
   },
   {
     title: "Expense",
     path: "#",
-    icon: <AiFillSignal color="white" fontSize="1.5rem" />,
+    icon: <BiTrendingUp color="white" fontSize="1.5rem" />,
     cName: "sidebar-text",
   },
   {
     title: "Account",
     path: "#",
-    icon: <FaUserAlt color="white" fontSize="1.5rem" />,
+    icon: <BiUser color="white" fontSize="1.5rem" />,
     cName: "sidebar-text",
   },
 ];
