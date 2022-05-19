@@ -1,19 +1,21 @@
 import React from "react";
+import Navbar from "../../components/navbar/Navbar";
+import Sidebar from "../../components/sidebar/Sidebar";
 import "./Home.css";
-import { Layout, Menu } from "antd";
-
-const { Header, Footer, Content, Sider } = Layout;
+import { useState } from "react";
+import { HomeContext } from "../../contexts/Context.js";
 
 function Home() {
+  const [sidebar, setSidebar] = useState(false);
   return (
-    <Layout>
-      <Header>Header</Header>
-      <Layout>
-        <Sider>Sider</Sider>
-        <Content>Content</Content>
-      </Layout>
-      <Footer>Footer</Footer>
-    </Layout>
+    <div className="home-page">
+      <HomeContext.Provider value={{ sidebar, setSidebar }}>
+        <Navbar />
+        <div className="content-space">
+          <Sidebar activity={sidebar ? "active" : "inactive"} />
+        </div>
+      </HomeContext.Provider>
+    </div>
   );
 }
 
