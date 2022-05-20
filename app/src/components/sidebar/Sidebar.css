@@ -1,6 +1,8 @@
 .main-sidebar{
-  background-color: #5E5262;
+  background-color: #5e5262e8;
   width: 225px;
+  height: 100%;
+  overflow: auto;
   position: relative;
   transition: 0.3s ease;
   left:-100%;

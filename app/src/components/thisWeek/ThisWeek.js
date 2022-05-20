@@ -5,14 +5,16 @@ import ThisWeekCard from "./thisWeekCard/ThisWeekCard";
 function ThisWeek() {
   const current = new Date();
 
+  let dayOfWeek = null;
+
   let weekDays = [
-    { 7: "Sunday" },
-    { 1: "Monday" },
-    { 2: "Tuesday" },
-    { 3: "Wednesday" },
-    { 4: "Thursday" },
-    { 5: "Friday" },
-    { 6: "Saturday" },
+    { Sunday: 7 },
+    { Monday: 1 },
+    { Tuesday: 2 },
+    { Wednesday: 3 },
+    { Thursday: 4 },
+    { Friday: 5 },
+    { Saturday: 6 },
   ];
 
   //to get the current date
@@ -22,13 +24,23 @@ function ThisWeek() {
   }/${current.getFullYear()}`;
 
   //to get the day of the week
-  console.log(current.toLocaleDateString("en-US", { weekday: "long" }));
+  let currentDayOfWeek = current.toLocaleDateString("en-US", {
+    weekday: "long",
+  });
 
   return (
     <div id="this-week-container">
-      <p id="heading">This Week {current.getDay() - 1}</p>
-      {weekDays.map((index) => {
-        return <ThisWeekCard />;
+      <p id="heading">This Week</p>
+      {weekDays.map((day, index) => {
+        dayOfWeek = Object.keys(day)[0];
+
+        return (
+          <ThisWeekCard
+            key={index + 1}
+            dayOfWeek={dayOfWeek}
+            dateOfWeek="12/02/22"
+          />
+        );
       })}
     </div>
   );

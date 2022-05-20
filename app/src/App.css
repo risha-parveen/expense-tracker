@@ -1,6 +1,11 @@
 html {
     height: 100%;
+    box-sizing: border-box;
+    width:100%;
+    padding: 0;
+    margin:0;
     background-color: #3D4144;
+    position:absolute;
 }
 
 body {
