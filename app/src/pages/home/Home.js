@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import SetPlan from "../../components/setPlan/SetPlan";
+import ThisWeek from "../../components/thisWeek/ThisWeek";
 import "./Home.css";
 import { useContext } from "react";
 import { SidebarContext } from "../../contexts/Context.js";
@@ -15,7 +16,7 @@ function Home() {
         <Sidebar activity={sidebar ? "active" : "inactive"} />
         <div className="content">
           <SetPlan />
-          <div id="this-week-container"></div>
+          <ThisWeek />
         </div>
       </div>
     </div>
