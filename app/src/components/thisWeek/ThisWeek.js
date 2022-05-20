@@ -4,8 +4,12 @@ import ThisWeekCard from "./thisWeekCard/ThisWeekCard";
 
 function ThisWeek() {
   const current = new Date();
+  const firstday = new Date(
+    current.getTime() - 60 * 60 * 24 * current.getDay() * 1000
+  );
 
   let dayOfWeek = null;
+  let currentDayNumber = null;
 
   let weekDays = [
     { Sunday: 7 },
@@ -17,28 +21,43 @@ function ThisWeek() {
     { Saturday: 6 },
   ];
 
+  const findTodayDate = (index) => {
+    if (index === 0) {
+      const today = new Date(
+        current.getTime() - 60 * 60 * 24 * current.getDay() * 1000
+      );
+      return date(today);
+    }
+    const today = new Date(firstday.getTime() + 60 * 60 * 24 * index * 1000);
+    return date(today);
+  };
+
   //to get the current date
 
-  const date = `${current.getDate()}/${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
-
-  //to get the day of the week
-  let currentDayOfWeek = current.toLocaleDateString("en-US", {
-    weekday: "long",
-  });
+  const date = (day) => {
+    return `${day.getDate()}/${day.getMonth() + 1}/${day.getFullYear()}`;
+  };
 
   return (
     <div id="this-week-container">
       <p id="heading">This Week</p>
+
       {weekDays.map((day, index) => {
+        let activity = "inactive";
         dayOfWeek = Object.keys(day)[0];
+        currentDayNumber = Object.values(day)[0];
+        let thisDate = findTodayDate(index);
+
+        if (current.getDay() === currentDayNumber) {
+          activity = "active";
+        }
 
         return (
           <ThisWeekCard
             key={index + 1}
             dayOfWeek={dayOfWeek}
-            dateOfWeek="12/02/22"
+            dateOfWeek={thisDate}
+            activity={activity}
           />
         );
       })}
