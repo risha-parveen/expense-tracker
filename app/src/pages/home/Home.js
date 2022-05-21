@@ -7,6 +7,7 @@ import "./Home.css";
 import { useContext } from "react";
 import { SidebarContext } from "../../contexts/Context.js";
 
+
 function Home() {
   const { sidebar } = useContext(SidebarContext);
   return (

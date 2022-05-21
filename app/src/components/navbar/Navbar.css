@@ -72,6 +72,11 @@ p{
   transition: 0.4s ease;
 }
 
+a{
+  margin: 0;
+  padding: 0;
+}
+
 .logout-button{
   color:rgba(255, 255, 255, 0.863);
   background-color:transparent;
@@ -86,4 +91,12 @@ p{
 .logout-button:hover{
   background-color: rgb(59, 59, 59);
   color:white;
+}
+
+#closeLogout{
+  display:none
+}
+
+#openLogout{
+  display:""
 }

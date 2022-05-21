@@ -18,9 +18,7 @@ function App() {
           <Route
             path="home"
             element={
-              <SidebarContext.Provider
-                value={{ sidebar, setSidebar, logoutbar, setLogoutbar }}
-              >
+              <SidebarContext.Provider value={{ sidebar, setSidebar }}>
                 <Home />
               </SidebarContext.Provider>
             }
