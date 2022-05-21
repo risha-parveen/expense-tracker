@@ -12,13 +12,13 @@ const SidebarData = [
   },
   {
     title: "Expense",
-    path: "#",
+    path: "/expense",
     icon: <BiTrendingUp color="white" fontSize="1.5rem" />,
     cName: "sidebar-text",
   },
   {
     title: "Account",
-    path: "#",
+    path: "/account",
     icon: <BiUser color="white" fontSize="1.5rem" />,
     cName: "sidebar-text",
   },
