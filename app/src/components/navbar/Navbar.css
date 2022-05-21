@@ -41,6 +41,7 @@ p{
 
 .right-nav{
   display: flex;
+  overflow: visible;
 }
 
 .arrow-button{
@@ -55,4 +56,34 @@ p{
   padding-top:12px;
   margin-right: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logout-bar{ 
+  position: relative;
+  z-index: 10;
+  float: right;
+  background-color: black;
+  bottom:15px;
+  right:10px;
+  width:max-content;
+  border-radius: 5px;;
+  border: 0.25px solid rgba(255, 255, 255, 0.541);
+  text-align: center;
+  transition: 0.4s ease;
+}
+
+.logout-button{
+  color:rgba(255, 255, 255, 0.863);
+  background-color:transparent;
+  border:none;
+  padding:15px 30px ;
+  width: max-content;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.logout-button:hover{
+  background-color: rgb(59, 59, 59);
+  color:white;
 }

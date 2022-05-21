@@ -58,4 +58,14 @@
   position:relative;
 }
 
+.income-today{
+  font-size: 1.5rem;
+  margin:20px;
+  color:#4FD25C
+}
 
+.expense-today{
+  font-size:1.5rem;
+  margin:20px;
+  color:#ff9f9f;
+}

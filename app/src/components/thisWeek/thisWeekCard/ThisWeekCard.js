@@ -7,7 +7,10 @@ function ThisWeekCard(props) {
         <p className="date-of-the-week">{props.dateOfWeek}</p>
         <p className="day-of-the-week">{props.dayOfWeek}</p>
       </div>
-      <div className="right-part"></div>
+      <div className="right-part">
+        <p className="income-today">10</p>
+        <p className="expense-today">20</p>
+      </div>
     </div>
   );
 }

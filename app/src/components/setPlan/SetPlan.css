@@ -1,7 +1,7 @@
 #set-plan-container{
   position: relative;
   top:200px;
-  width:300px;
+  min-width:300px;
   height:300px;
   display:flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   box-sizing: border-box;
   height:55px;
   color:white;
-  margin:10px;
+  margin:10px 10px 10px 0;
   border-radius: 10px;
   border:none;
   font-size: 1.3rem;

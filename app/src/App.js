@@ -8,6 +8,7 @@ import { SidebarContext } from "./contexts/Context.js";
 
 function App() {
   const [sidebar, setSidebar] = useState(false);
+  const [logoutbar, setLogoutbar] = useState(false);
 
   return (
     <div className="expense-tracker">
@@ -17,7 +18,9 @@ function App() {
           <Route
             path="home"
             element={
-              <SidebarContext.Provider value={{ sidebar, setSidebar }}>
+              <SidebarContext.Provider
+                value={{ sidebar, setSidebar, logoutbar, setLogoutbar }}
+              >
                 <Home />
               </SidebarContext.Provider>
             }

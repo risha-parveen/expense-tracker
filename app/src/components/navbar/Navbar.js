@@ -5,6 +5,8 @@ import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { useState, useContext } from "react";
 import { SidebarContext } from "../../contexts/Context.js";
 
+const LogoutBar = () => {};
+
 function Navbar() {
   const [upDown, setUpdown] = useState(false);
   const { sidebar, setSidebar } = useContext(SidebarContext);
@@ -55,6 +57,9 @@ function Navbar() {
           </button>
           <p className="account-username">Adithya Raj</p>
         </div>
+      </div>
+      <div className="logout-bar">
+        <button className="logout-button">Sign Out</button>
       </div>
     </div>
   );
