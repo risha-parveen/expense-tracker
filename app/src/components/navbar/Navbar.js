@@ -5,8 +5,10 @@ import { FaAlignJustify } from "react-icons/fa";
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 import { useState, useContext, useEffect } from "react";
 import { SidebarContext } from "../../contexts/Context.js";
+import { useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
   const [upDown, setUpdown] = useState(false);
   const [logoutbar, setLogoutbar] = useState(false);
   const { sidebar, setSidebar } = useContext(SidebarContext);
@@ -21,12 +23,13 @@ function Navbar() {
 
   const toggleLogoutbar = () => {
     setLogoutbar(!logoutbar);
-    console.log(logoutbar);
   };
 
-  useEffect(() => {
-    console.log(logoutbar);
-  }, [logoutbar]);
+  const handleClick = () => {
+    console.log(location.pathname);
+  };
+
+  useEffect(() => {}, [logoutbar]);
 
   return (
     <div className="navbar">
@@ -37,6 +40,7 @@ function Navbar() {
             onClick={(e) => {
               e.preventDefault();
               toggleSidebar();
+              handleClick();
             }}
           >
             <FaAlignJustify color="white" fontSize="1.5rem" />

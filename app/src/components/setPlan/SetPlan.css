@@ -6,9 +6,9 @@
   padding:10px 0;
   border-radius: 10px;
   margin-right:10px;;
-  border:0.1px solid rgb(177, 177, 177);
+  border:0.1px solid rgb(129, 128, 128);
   display:flex;
-  background-color: rgba(34, 33, 33, 0.87);
+  background-color: rgba(48, 46, 46, 0.87);
   flex-direction: column;
   box-sizing: border-box;
 }
