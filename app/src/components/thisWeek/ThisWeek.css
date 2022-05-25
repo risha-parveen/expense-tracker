@@ -2,11 +2,13 @@
 #this-week-container{
   position: relative;
   top:80px;
-  margin-left:10px;
-  width:600px;
+  margin:10px;
+  width:max-content;
+  padding:10px;
   height:max-content;
   display:flex;
   flex-direction: column;
+  transition:0.4s ease;
 }
 
 #heading{
@@ -19,15 +21,15 @@
 }
 
 .card{
-  width:100%;
+  width:600px;
   height:70px;
   margin:10px;
-  overflow-x: hidden;
   background-color: rgba(162, 75, 175, 0.70);
   border-radius:5px ;
   display:flex;
   flex-direction: row;
   flex-shrink: 1;
+  transition:0.4s ease;
 }
 
 .left-part{
@@ -68,4 +70,10 @@
   font-size:1.5rem;
   margin:20px;
   color:#ff9f9f;
+}
+
+.card:hover{
+  padding:5px;
+  margin:4px;
+  background-color: rgba(162, 75, 175, 0.562);
 }
