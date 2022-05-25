@@ -24,7 +24,7 @@ ul{
   list-style: none;
 }
 
-li a{
+a{
   text-decoration: none;
   display:inline;
   color: white;
@@ -33,12 +33,13 @@ li a{
 }
 
 .sidebar-text{
+  cursor:pointer;
   color: white;
   padding: 20px 20px;
 }
 
 .sidebar-text:hover{
-  background-color: #473F49;
+  background-color: #473f4973;
 }
 
 .span-text{
@@ -53,4 +54,9 @@ li a{
 
 .navbar #inactive .span-text{
   display:none;
+}
+
+a #colored{
+  background-color:#473f49ec;
+  transition:0.4s ease;
 }

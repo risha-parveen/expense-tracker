@@ -26,28 +26,28 @@ const SidebarData = [
   },
 ];
 
+let currentPath = null;
+
 function Sidebar({ activity }) {
-  let currentPath = null;
   const location = useLocation();
   useState(() => {
     currentPath = location.pathname.slice(1);
   }, []);
+
+  let id = null;
   return (
     <div className="main-sidebar" id={activity}>
       <ul className="side-menu-items">
         {SidebarData.map((item, index) => {
+          id = "non-colored";
+          if (currentPath === item.title.toLowerCase()) id = "colored";
           return (
-            <li key={index} className={item.cName}>
-              <Link
-                to={item.path}
-                onClick={() => {
-                  console.log(currentPath);
-                }}
-              >
+            <Link key={index} to={item.path}>
+              <li className={item.cName} id={id}>
                 {item.icon}
                 <span className="span-text">{item.title}</span>
-              </Link>
-            </li>
+              </li>
+            </Link>
           );
         })}
       </ul>
