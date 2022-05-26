@@ -24,7 +24,7 @@ ul{
   list-style: none;
 }
 
-a{
+.side-menu-items a{
   text-decoration: none;
   display:inline;
   color: white;
