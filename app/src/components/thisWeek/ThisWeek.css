@@ -74,13 +74,11 @@
 
 .card:hover{
   padding:5px;
-  margin:4px;
+  margin:5px;
   background-color: rgba(162, 75, 175, 0.562);
 }
 
 #this-week-container #active{
- margin:2px;
- padding:8px;
  background-color:#B153C0;
  cursor:pointer;
 }
