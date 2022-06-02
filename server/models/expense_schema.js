@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const expense_schema = mongoose.Schema({
   username: {
@@ -9,16 +9,46 @@ const expense_schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  currency: {},
-  initial_amount: {},
-  weekly_plan: {},
+  currency: {
+    type: String,
+    required: true,
+  },
+  initial_amount: {
+    type: String,
+    required: true,
+  },
+  weekly_plan: {
+    type: String,
+    required: true,
+  },
   this_week: {
     sunday: {
-      date: {
-        type: Date,
-        required: true,
-      },
-      revenue: {},
+      type: Array,
+      required: true,
+    },
+    monday: {
+      type: Array,
+      required: true,
+    },
+    tueday: {
+      type: Array,
+      required: true,
+    },
+    wednesday: {
+      type: Array,
+      required: true,
+    },
+    thursday: {
+      type: Array,
+      required: true,
+    },
+    friday: {
+      type: Array,
+      required: true,
+    },
+    saturday: {
+      type: Array,
+      required: true,
     },
   },
 });
