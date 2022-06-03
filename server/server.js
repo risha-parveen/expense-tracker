@@ -20,8 +20,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
 
-app.get();
-
 app.get("/get_data", async (req, res) => {
   try {
     result = await expense_db.find({});
