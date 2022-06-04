@@ -11,3 +11,62 @@
   box-sizing: border-box;
   ;
 }
+
+.account-container{
+  margin-top:200px;
+  width:70%;
+  max-width: 900px;
+  display:flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+#account-user{
+  font-size: 2.5rem;
+  color:rgba(255, 255, 255, 0.664);
+  margin: 5px;;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#line{
+  height: 0.5px;
+  background-color: rgba(245, 245, 245, 0.658);
+  margin:0;
+}
+
+.title-container{
+  height:fit-content;
+  margin:5px;
+  display:flex;
+  flex-direction: row;
+}
+
+.account-titles{
+  position: relative;
+  left:10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  color:rgba(255, 255, 255, 0.781);
+}
+
+#save-button{
+  color:rgba(255, 255, 255, 0.863);
+  background-color:rgba(0, 0, 0, 0.568);
+  border:none;
+  padding:10px 20px ;
+  width: max-content;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+  border-radius: 5px;;
+  border: 0.25px solid rgba(255, 255, 255, 0.541);
+  position: relative;
+  top:20px;
+  left:50%;
+}
+
+#save-button:hover{
+  background-color: rgb(59, 59, 59);
+  color:white;
+}
+
