@@ -1,0 +1,16 @@
+.dropdown-select{
+  background-color: rgba(212, 184, 84, 0.445);
+  color:rgba(255, 255, 255, 0.753);
+  font-size: 1.2rem;
+  width:fit-content;
+  margin:10px;
+  padding:5px;
+}
+
+.dropdown-option{
+  background-color: #3D4144;
+}
+
+option:hover{
+  color: black;
+}

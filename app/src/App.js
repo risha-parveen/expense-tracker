@@ -8,6 +8,7 @@ import "./App.css";
 import { useState } from "react";
 import { SidebarContext } from "./contexts/Context.js";
 
+
 function App() {
   const [sidebar, setSidebar] = useState(false);
 
