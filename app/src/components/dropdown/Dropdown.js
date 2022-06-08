@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-import "./Dropdown.css";
 import Select from "react-select";
 
 function Dropdown() {
-  const customStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: "pink",
-    }),
-  };
-
   const options = [
     { label: "$ - U.S Dollar", value: "dollar" },
     { label: "€ - Euro", value: "euro" },
@@ -20,10 +12,11 @@ function Dropdown() {
   return (
     <div className="dropdown">
       <Select
-        styles={customStyles}
         defaultValue={selectedOption}
         onChange={setSelectedOption}
         options={options}
+        className="dropdown-select"
+        classNamePrefix="dropdown-inner"
       />
     </div>
   );

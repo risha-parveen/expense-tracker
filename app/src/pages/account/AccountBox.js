@@ -9,7 +9,7 @@ function AccountBox() {
       <p id="account-user">Username</p>
       <div id="line"></div>
       <div className="title-container">
-        {/*<p className="account-titles">Currency</p>*/}
+        <p className="account-titles">Currency</p>
         <Dropdown selected={selected} setSelected={setSelected} />
       </div>
       <div className="title-container">

@@ -49,6 +49,12 @@
   color:rgba(255, 255, 255, 0.781);
 }
 
+.dropdown{
+  position: relative;
+  top:17px;
+  right:-50%;
+}
+
 #save-button{
   color:rgba(255, 255, 255, 0.863);
   background-color:rgba(0, 0, 0, 0.568);
@@ -62,7 +68,7 @@
   border: 0.25px solid rgba(255, 255, 255, 0.541);
   position: relative;
   top:20px;
-  left:50%;
+  left: 20px;
 }
 
 #save-button:hover{
