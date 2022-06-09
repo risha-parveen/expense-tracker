@@ -15,7 +15,7 @@
 .account-container{
   margin-top:200px;
   width:70%;
-  max-width: 900px;
+  max-width: 700px;
   display:flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -47,32 +47,53 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.2rem;
   color:rgba(255, 255, 255, 0.781);
+  margin-right:auto;
 }
 
 .dropdown{
   position: relative;
   top:17px;
-  right:-50%;
+  right:3px;
+}
+
+.account-initial-amount,
+.account-weekly-plan{
+  border-radius: 50px;
+  margin:0;
+  width:119px;
+  height:40px;
+  position: relative;
+  top:15px;
+  cursor: pointer;
+  background-color:rgba(0, 0, 0, 0.568) ;
+  border: 0.25px solid rgba(255, 255, 255, 0.541);
+  color:whitesmoke;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.account-initial-amount:focus,
+.account-weekly-plan:focus{
+  cursor:auto;
 }
 
 #save-button{
   color:rgba(255, 255, 255, 0.863);
   background-color:rgba(0, 0, 0, 0.568);
   border:none;
-  padding:10px 20px ;
+  padding:10px 40px ;
   width: max-content;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.4s ease;
-  border-radius: 5px;;
+  border-radius: 50px;;
   border: 0.25px solid rgba(255, 255, 255, 0.541);
   position: relative;
   top:20px;
-  left: 20px;
+  right:calc(-100% + 128px);
 }
 
 #save-button:hover{
   background-color: rgb(59, 59, 59);
   color:white;
 }
-

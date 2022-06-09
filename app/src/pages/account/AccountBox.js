@@ -14,9 +14,11 @@ function AccountBox() {
       </div>
       <div className="title-container">
         <p className="account-titles">Initial Amount</p>
+        <input className="account-initial-amount"></input>
       </div>
       <div className="title-container">
         <p className="account-titles">Set Weekly Plan</p>
+        <input className="account-weekly-plan"></input>
       </div>
       <button id="save-button">Save</button>
     </div>
