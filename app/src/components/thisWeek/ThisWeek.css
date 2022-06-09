@@ -82,3 +82,20 @@
  background-color:#B153C0;
  cursor:pointer;
 }
+
+.expense-tag{
+  font-size: 1.6rem;
+  color:rgba(255, 255, 255, 0.603);
+  position: relative;
+  bottom:10px;
+  right:20px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#display-hidden{
+  display:none;
+}
+
+#display-non-hidden{
+  display:"";
+}

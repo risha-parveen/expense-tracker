@@ -29,6 +29,7 @@ function ThisWeek() {
       return date(today);
     }
     const today = new Date(firstday.getTime() + 60 * 60 * 24 * index * 1000);
+
     return date(today);
   };
 
@@ -47,6 +48,7 @@ function ThisWeek() {
         dayOfWeek = Object.keys(day)[0];
         currentDayNumber = Object.values(day)[0];
         let thisDate = findTodayDate(index);
+        const dateNumber = thisDate.split("/")[0];
 
         if (current.getDay() === currentDayNumber) {
           activity = "active";
@@ -58,6 +60,8 @@ function ThisWeek() {
             dayOfWeek={dayOfWeek}
             dateOfWeek={thisDate}
             activity={activity}
+            nowDate={current.getDate()}
+            dateNumber={dateNumber}
           />
         );
       })}
