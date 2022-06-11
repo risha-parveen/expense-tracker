@@ -99,3 +99,52 @@
 #display-non-hidden{
   display:"";
 }
+
+.revenue-field,.expense-field{
+  height:fit-content;
+  width:100px;
+  text-align: center;
+  font-size: 1.2rem;
+  padding:10px;
+  color:whitesmoke;
+  background-color: #3D4144;
+  border-radius: 20px;
+  border: none;
+  margin:5px;
+  position:relative;
+  top:10px;
+  transition:0.4s ease;
+}
+
+.revenue-field::placeholder,
+.expense-field::placeholder{
+  color:rgba(245, 245, 245, 0.664);
+}
+
+.revenue-field:hover,
+.expense-field:hover{
+  background-color: #242525;
+  cursor:pointer;
+}
+
+
+.check-symbol,.x-symbol{
+  position: relative;
+  left:-5px;
+  color:#242525ec;
+  background-color: #39D048;
+  border:none;
+  height:30px;
+  width:30px;
+  border-radius:15px;
+  position:relative;
+  top:10px;
+  margin:10px;
+  transition:0.4s ease;
+  cursor:pointer;
+  box-shadow: 1px 1px 4px 1px rgb(102, 57, 102);
+}
+
+.x-symbol{
+  background-color: #adb7be;
+}

@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { BiX, BiCheck } from "react-icons/bi";
 
 function ThisWeekCard(props) {
   const [open, setOpen] = useState(true);
+  const [check, setCheck] = useState(true);
 
   const toggleDisplay = () => {
-    setOpen(!open);
+    if (open === true) setOpen(!open);
+  };
+
+  const toggleCheck = () => {
+    setCheck(!check);
   };
 
   if (props.activity === "inactive") {
@@ -52,9 +58,25 @@ function ThisWeekCard(props) {
             className="right-part"
             id={open ? "display-hidden" : "display-non-hidden"}
           >
-            <button className="revenue-button">Revenue</button>
-            <button className="expense-button">Expense</button>
-            <button className="green-tick"></button>
+            <input className="revenue-field" placeholder="Revenue" />
+            <input className="expense-field" placeholder="Expense" />
+            <div
+              className="green-tick"
+              onClick={() => {
+                toggleCheck();
+              }}
+            >
+              <BiCheck
+                fontSize="1.8rem"
+                className="check-symbol"
+                id={check ? "display-non-hidden" : "display-hidden"}
+              />
+              <BiX
+                fontSize="1.8rem"
+                className="x-symbol"
+                id={check ? "display-hidden" : "display-non-hidden"}
+              />
+            </div>
           </div>
         </div>
       </div>
