@@ -5,31 +5,17 @@ const expense_schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  name: {
-    type: String,
+  current_date: {
+    type: Date,
     required: true,
   },
-  currency: {
-    type: String,
+  revenue: {
+    type: Number,
     required: true,
   },
-  initial_amount: {
-    type: String,
+  expense: {
+    type: Number,
     required: true,
-  },
-  weekly_plan: {
-    type: String,
-    required: true,
-  },
-  today: {
-    revenue: {
-      type: Number,
-      required: true,
-    },
-    expense: {
-      type: Number,
-      required: true,
-    },
   },
 });
 
