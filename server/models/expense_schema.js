@@ -5,18 +5,33 @@ const expense_schema = mongoose.Schema({
     type: String,
     required: true,
   },
-  current_date: {
-    type: Date,
-    required: true,
-  },
-  revenue: {
-    type: Number,
-    required: true,
-  },
-  expense: {
-    type: Number,
+  expense_info: {
+    type: Array,
     required: true,
   },
 });
 
 module.exports = mongoose.model("expense_db", expense_schema);
+
+
+/*
+[
+  username,
+  expense_info:[   
+    {
+      date,
+      revenue,
+      expense
+    }
+    {
+      date,
+      revenue,
+      expense
+    }
+    .
+    .
+    .
+  ]
+]
+
+*/

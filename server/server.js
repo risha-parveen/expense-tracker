@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const accountRoute = require("./routes/accountRoute");
+const expenseRoute = require("./routes/expenseRoute");
 
 const app = express();
 
@@ -21,6 +22,8 @@ const info_db = require("./models/info_schema");
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
+
+app.use("/expense", expenseRoute);
 
 app.use("/account", accountRoute);
 

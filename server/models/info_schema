@@ -10,11 +10,11 @@ const info_schema = mongoose.Schema({
     required: true,
   },
   initial_amount: {
-    type: Number,
+    type: String,
     required: true,
   },
   weekly_plan: {
-    type: Number,
+    type: String,
     required: true,
   },
 });
