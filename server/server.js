@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const accountRoute = require("./routes/accountRoute");
 
 const app = express();
 
@@ -15,10 +16,13 @@ try {
 
 const expense_db = require("./models/expense_schema");
 const user_db = require("./models/user_schema");
+const info_db = require("./models/info_schema");
 
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
+
+app.use("/account", accountRoute);
 
 app.get("/get_data", async (req, res) => {
   try {
