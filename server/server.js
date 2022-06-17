@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const accountRoute = require("./routes/accountRoute");
 const expenseRoute = require("./routes/expenseRoute");
+const loginRoute = require("./routes/loginRoute");
 
 const app = express();
 
@@ -17,11 +18,13 @@ try {
 
 const expense_db = require("./models/expense_schema");
 const user_db = require("./models/user_schema");
-const info_db = require("./models/info_schema");
+const info_db = require("./models/info_schema.js");
 
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.json());
+
+app.use("/login", loginRoute);
 
 app.use("/expense", expenseRoute);
 

@@ -18,13 +18,18 @@ try {
 
 const expense_db = require("../models/expense_schema");
 const user_db = require("../models/user_schema");
-const info_db = require("../models/info_schema");
+const info_db = require("../models/info_schema.js");
 
 const currency_symbol = {
   dollar: "$",
   euro: "€",
   rupee: "₹",
 };
+
+//username
+//initial_amount
+//weekly_plan
+//currency
 
 router.post("/edit", async (req, res) => {
   try {
@@ -46,43 +51,21 @@ router.post("/edit", async (req, res) => {
     initial_amount: initial,
     weekly_plan: weekly,
   };
-  let expense_data = {
-    username: req.body.username,
-    expense_info: [],
-  };
-  if (result.length === 0) {
-    try {
-      const db = new info_db(new_data);
-      const exp_db = new expense_db(expense_data);
-      await db.save();
-      await exp_db.save();
-      res.status(200).send({
-        action: "inserted",
-        success: true,
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(500).send({
-        success: false,
-      });
-    }
-  } else {
-    try {
-      await info_db.replaceOne({ username: req.body.username }, new_data, {
-        upsert: true,
-      });
-      res.status(200).send({
-        action: "updated",
-        success: true,
-      });
-    } catch (error) {
-      console.log(error);
-      res.status(500).send({
-        action: "not updated",
-        success: false,
-      });
-      return;
-    }
+  try {
+    await info_db.replaceOne({ username: req.body.username }, new_data, {
+      upsert: true,
+    });
+    res.status(200).send({
+      action: "updated",
+      success: true,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      action: "not updated",
+      success: false,
+    });
+    return;
   }
 });
 

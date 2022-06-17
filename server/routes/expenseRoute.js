@@ -13,7 +13,7 @@ try {
 
 const expense_db = require("../models/expense_schema");
 const user_db = require("../models/user_schema");
-const info_db = require("../models/info_schema");
+const info_db = require("../models/info_schema.js");
 
 const currency_symbol = {
   dollar: "$",
