@@ -41,6 +41,12 @@ router.post("/add_expense", auth, async (req, res) => {
   }
   let rev = req.body.revenue + currency_symbol[req.body.currency];
   let exp = req.body.expense + currency_symbol[req.body.currency];
+  let length = result[0].expense_info.length;
+  //we are storing only the data of one month
+  //so deleting the older data
+  if (length > 31) {
+    console.log(result[0].expense_info.shift());
+  }
 
   let today_expense = result[0].expense_info.pop();
   if (today_expense === undefined || today_expense.date !== req.body.date) {
