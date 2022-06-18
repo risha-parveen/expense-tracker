@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const auth = require("../middleware/auth");
 
 const router = express.Router();
 
@@ -26,14 +27,13 @@ const currency_symbol = {
   rupee: "₹",
 };
 
-//username
 //initial_amount
 //weekly_plan
 //currency
 
-router.post("/edit", async (req, res) => {
+router.post("/edit", auth, async (req, res) => {
   try {
-    result = await info_db.find({ username: req.body.username });
+    result = await info_db.find({ _id: req.user.user_id });
   } catch (error) {
     res.status(500).send({
       action: "failed to edit",
@@ -46,13 +46,13 @@ router.post("/edit", async (req, res) => {
   let weekly = req.body.weekly_plan + currency_symbol[req.body.currency];
 
   let new_data = {
-    username: req.body.username,
+    username: req.user.username,
     currency: req.body.currency,
     initial_amount: initial,
     weekly_plan: weekly,
   };
   try {
-    await info_db.replaceOne({ username: req.body.username }, new_data, {
+    await info_db.replaceOne({ username: req.user.username }, new_data, {
       upsert: true,
     });
     res.status(200).send({

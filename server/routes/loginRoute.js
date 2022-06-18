@@ -20,6 +20,9 @@ const expense_db = require("../models/expense_schema");
 const user_db = require("../models/user_schema");
 const info_db = require("../models/info_schema.js");
 
+//username
+//password
+
 router.post("/sign_up", async (req, res) => {
   let username = req.body.username;
   let password = req.body.password;
@@ -47,15 +50,18 @@ router.post("/sign_up", async (req, res) => {
       };
       try {
         let user = await user_db.insertMany(newUser);
+        let user_id = user[0]._id;
         if (user) {
           try {
             let new_info = {
+              _id: user_id,
               username: username,
               currency: "dollar",
               initial_amount: "0$",
               weekly_plan: "0$",
             };
             let new_expense = {
+              _id: user_id,
               username: username,
               expense_info: [],
             };

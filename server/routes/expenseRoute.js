@@ -3,6 +3,8 @@ const mongoose = require("mongoose");
 
 const router = express.Router();
 
+const auth = require("../middleware/auth");
+
 try {
   mongoose.connect("mongodb://127.0.0.1:27017/ExpenseDB", {
     useNewUrlParser: true,
@@ -21,15 +23,14 @@ const currency_symbol = {
   rupee: "₹",
 };
 
-//username
 //revenue
 //expense
 //date
 //currency
 
-router.post("/add_expense", async (req, res) => {
+router.post("/add_expense", auth, async (req, res) => {
   try {
-    result = await expense_db.find({ username: req.body.username });
+    result = await expense_db.find({ _id: req.user.user_id });
   } catch (error) {
     console.log(error);
     res.status(500).send({
@@ -55,7 +56,7 @@ router.post("/add_expense", async (req, res) => {
     };
     result[0].expense_info.push(new_expense);
     try {
-      await expense_db.replaceOne({ username: req.body.username }, result[0], {
+      await expense_db.replaceOne({ username: req.user.username }, result[0], {
         upsert: true,
       });
       res.status(200).send({
@@ -76,7 +77,7 @@ router.post("/add_expense", async (req, res) => {
     today_expense.expense = exp;
     result[0].expense_info.push(today_expense);
     try {
-      await expense_db.replaceOne({ username: req.body.username }, result[0], {
+      await expense_db.replaceOne({ username: req.user.username }, result[0], {
         upsert: true,
       });
       res.status(200).send({
