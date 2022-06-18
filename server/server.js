@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const accountRoute = require("./routes/accountRoute");
 const expenseRoute = require("./routes/expenseRoute");
 const loginRoute = require("./routes/loginRoute");
+const auth = require("./middleware/auth");
 
 const app = express();
 
@@ -30,9 +31,9 @@ app.use("/expense", expenseRoute);
 
 app.use("/account", accountRoute);
 
-app.get("/get_data", async (req, res) => {
+app.get("/get_data", auth, async (req, res) => {
   try {
-    result = await expense_db.find({});
+    result = await expense_db.find({ _id: req.user.user_id });
     res.json(result);
   } catch (error) {
     res.status(500).send({

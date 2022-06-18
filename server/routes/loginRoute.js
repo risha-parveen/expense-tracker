@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const registerValidation = require("../validation");
 const bcrypt = require("bcrypt");
+const fs = require("fs");
+const path = require("path");
+const jwt = require("jsonwebtoken");
 
 const router = express.Router();
 
@@ -76,6 +79,47 @@ router.post("/sign_up", async (req, res) => {
         console.log(error);
       }
     }
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+const privateKey = fs.readFileSync(
+  path.join(__dirname, "..", "keys", "privateKey.txt")
+);
+
+router.post("/sign_in", async (req, res) => {
+  try {
+    user = await user_db.find({ username: req.body.username });
+    if (user.length === 0) {
+      return res.status(400).send({
+        success: false,
+        message: "username doesnt exist",
+      });
+    }
+    const validPass = bcrypt.compareSync(req.body.password, user[0].password);
+
+    if (!validPass)
+      return res.status(400).send({
+        success: false,
+        message: "password incorrect",
+      });
+    const payload = {
+      user_id: user[0]._id,
+      username: req.body.username,
+    };
+    const token = jwt.sign(payload, privateKey, {
+      expiresIn: "12h",
+      algorithm: "RS256",
+    });
+
+    console.log(token);
+
+    res.status(200).send({
+      success: true,
+      message: "logged in",
+      token: token,
+    });
   } catch (error) {
     console.log(error);
   }
