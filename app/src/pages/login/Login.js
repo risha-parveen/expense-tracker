@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import axios from "../../api/axios";
+const SIGN_IN_URL = "/login/sign_in";
+const SIGN_UP_URL = "/login/sign_up";
 
 const LoginPage = () => {
   const [form, setform] = useState(true);
@@ -13,7 +16,7 @@ const LoginPage = () => {
     <div className="login">
       <div className="overview">
         <h1>Expense Tracker</h1>
-        <h4>Track your expenses in an effiecient way</h4>
+        <h4>Track your expenses in an efficient way</h4>
       </div>
       <div className="ellipse"></div>
       <div className="login-board">
@@ -23,6 +26,7 @@ const LoginPage = () => {
             placeholder="username"
             spellCheck="false"
             autoComplete="off"
+            autoSave="off"
           />
           <input
             className="password fields"
@@ -51,6 +55,7 @@ const LoginPage = () => {
             placeholder="username"
             spellCheck="false"
             autoComplete="off"
+            autoSave="off"
           />
           <input
             className="password fields"

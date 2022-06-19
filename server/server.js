@@ -31,10 +31,21 @@ app.use("/expense", expenseRoute);
 
 app.use("/account", accountRoute);
 
-app.get("/get_data", auth, async (req, res) => {
+app.get("/get_info", auth, async (req, res) => {
+  try {
+    result = await info_db.find({ _id: req.user.user_id });
+    res.json(result);
+  } catch (error) {
+    res.status(500).send({
+      success: false,
+    });
+  }
+});
+
+app.get("/get_expense", auth, async (req, res) => {
   try {
     result = await expense_db.find({ _id: req.user.user_id });
-    res.json(result);
+    res.json(result[0].expense_info);
   } catch (error) {
     res.status(500).send({
       success: false,
