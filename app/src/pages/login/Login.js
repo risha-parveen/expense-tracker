@@ -3,7 +3,7 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import axios from "../../api/axios";
 const SIGN_IN_URL = "/login/sign_in";
-const SIGN_UP_URL = "/login/sign_up";
+
 
 const LoginPage = () => {
   const [form, setform] = useState(true);
@@ -23,10 +23,12 @@ const LoginPage = () => {
         username: user,
         password: pwd,
       };
+      const token = "hello";
       const response = await axios.post(SIGN_IN_URL, JSON.stringify(data), {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
           Accept: "application/json",
+          Authorization: "Bearer " + token,
         },
         withCredentials: true,
       });

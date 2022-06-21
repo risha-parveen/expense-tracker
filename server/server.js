@@ -6,8 +6,16 @@ const accountRoute = require("./routes/accountRoute");
 const expenseRoute = require("./routes/expenseRoute");
 const loginRoute = require("./routes/loginRoute");
 const auth = require("./middleware/auth");
+const cors = require("cors");
 
 const app = express();
+
+const corsOptions = {
+  origin: "http://localhost:3000",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 try {
   mongoose.connect("mongodb://127.0.0.1:27017/ExpenseDB", {
@@ -53,6 +61,6 @@ app.get("/get_expense", auth, async (req, res) => {
   }
 });
 
-app.listen(6000, () => {
+app.listen(5000, () => {
   console.log("server listening");
 });

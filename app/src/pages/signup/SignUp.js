@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "../../api/axios";
+const SIGN_UP_URL = "/login/sign_up";
 
 function SignUpPage() {
   return (
